@@ -45,7 +45,7 @@ class Stopwatch extends Component<StopwatchProps, StopwatchState> {
         });
     }
     handleResetClick(): void {
-        clearInterval(this.incrementer);
+        clearInterval(this.incrementer );
         this.setState({
             secondsElapsed: 0,
             laps: []
@@ -104,10 +104,10 @@ type LapProps = {
     onDelete: (index: number) => void
 }
 
-const Lap: React.FC<LapProps> = (props: LapProps) => (
+const Lap: React.FC<LapProps> = ({ index, lap, onDelete }: LapProps) => (
     <li className="stopwatch-lap">
-        <strong>{props.index}</strong>/ {formattedSeconds(props.lap)} <button
-        onClick={() => props.onDelete(props.index - 1)} > X </button>
+        <strong>{index}</strong>/ {formattedSeconds(lap)} <button
+        onClick={() => onDelete(index - 1)} > X </button>
     </li>
 );
 
