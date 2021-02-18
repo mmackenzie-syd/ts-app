@@ -12,7 +12,7 @@ I made the following changes to the code to correct it and ensure that it ran co
 
 5) Remove the setinterval via its handle when the Stopwatch Class Component unmounts to prevent memory leak.
  
-6) Add type definitions to the following (and others): the stopwatch class state; the lap functional component and input properties; the delete callback function (return a void); add return types to each method of the stopwatch class; add typecheck to the setInterval handle property.
+6) Add type definitions to the following (and others as shown in the attached code): the stopwatch class state; the lap functional component and input properties; the delete callback function (return a void); add return types to each method of the stopwatch class; add typecheck to the setInterval handle property.
 
 ### Suggestions for improvements
 
