@@ -8,11 +8,11 @@ I made the following changes to the code to correct it:
 
 3) Remove the forceUpdate and move the laps array property to the state so that deleting a lap will trigger an update when in the stopped state.
 
-4) Add missing styles; add basic styles; add correctly named html elements for the laps list (ul and li).
+4) Add missing styles and add basic styles to make it look prettier. Add correctly named html elements for the laps list (ul and li).
 
 5) Remove the setinterval via its handle when the Stopwatch Class Component unmounts to prevent memory leak.
  
-6) Add type definitions to the following: the stopwatch class state; the lap functional component and input properties; the delete callback function (return a void); add return types to each method of the stopwatch class; add typecheck to the setInterval handle property.
+6) Add type definitions to the following (and others): the stopwatch class state; the lap functional component and input properties; the delete callback function (return a void); add return types to each method of the stopwatch class; add typecheck to the setInterval handle property.
 
 ### Suggestions for improvements
 
