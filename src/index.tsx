@@ -16,7 +16,7 @@ interface StopwatchState {
     laps: number []
 }
 class Stopwatch extends Component<StopwatchProps, StopwatchState> {
-    incrementer: any
+    incrementer: number | undefined
     constructor(props: StopwatchProps) {
         super(props);
         this.state = {
@@ -32,8 +32,8 @@ class Stopwatch extends Component<StopwatchProps, StopwatchState> {
         this.handleResetClick = this.handleResetClick.bind(this);
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
     }
-    handleStartClick():void {
-        this.incrementer = setInterval(() =>
+    handleStartClick(): void {
+        this.incrementer = window.setInterval(() =>
             this.setState({
                 secondsElapsed: this.state.secondsElapsed + 1,
             }), 1000);
@@ -44,7 +44,7 @@ class Stopwatch extends Component<StopwatchProps, StopwatchState> {
             lastClearedIncrementer: this.incrementer,
         });
     }
-    handleResetClick():void {
+    handleResetClick(): void {
         clearInterval(this.incrementer);
         this.setState({
             secondsElapsed: 0,
