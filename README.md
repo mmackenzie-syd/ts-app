@@ -18,7 +18,7 @@ I made the following changes to the code to correct it and ensure that it ran co
 
 1) I would use React Hooks, with useState and useEffect, as this is the replacement for the Class based code. 
 
-2) I would also seperate the logic in the Stopwatch class and the html by moving the html to a functional component (without logic) and have only an interface to the template in the class component.
+2) I would seperate the logic in the Stopwatch class and the html by moving the html to a functional component (without logic) and have only an interface to the template in the class component.
 
 3) I would add unit tests to the Stopwatch class.
 
