@@ -8,9 +8,9 @@
 
 4) Add missing styles; add basic styles; add correctly named html elements for the laps list (ul and li).
 
-5) Remove the settimeoout handle when the Stopwatch Class Component unmounts to prevent memory leak.
+5) Remove the setinterval via its handle when the Stopwatch Class Component unmounts to prevent memory leak.
  
-6) Add type definitions to the following: the delete callback function (return a void); the stopwatch class state; correctly define the lap function component type definitions; add return types to each method of the stopwatch class; add typecheck to the setTimeout handle property.
+6) Add type definitions to the following: the stopwatch class state; the lap functional component and input properties; the delete callback function (return a void); add return types to each method of the stopwatch class; add typecheck to the setInterval handle property.
 
 
 # Getting Started with Create React App
