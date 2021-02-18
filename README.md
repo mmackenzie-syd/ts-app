@@ -1,32 +1,16 @@
 # List of Changes
 
-add prop destructure
- 
-add type for timeout
- 
-add typecheck to render
- 
-add type definitions to class and lap
- 
-use type definition for delete callback
+1) Bind the callback method functions to the Stopwatch class instance so that the callbacks will work.
 
-add min height
+2) Move the key index outside of the lap functional component and into to the list of the Stopwatch class instance.
 
-remove timer on component unmount
+3) Remove the forceUpdate and move the laps array property to the state so that deleting a lap will trigger an update when in the stopped state.
 
-move lap to state so that delete lap works when stopped
- 
-add basic styles
- 
-add correct html elements for list
- 
-add missing styles
- 
-remove forceUpdate
+4) Add missing styles; add basic styles; add correctly named html elements for the laps list (ul and li).
 
-move key index outside of component
+5) Remove the settimeoout handle when the Stopwatch Class Component unmounts to prevent memory leak.
  
-bind callback functions
+6) Add type definitions to the following: the delete callback function (return a void); the stopwatch class state; correctly define the lap function component type definitions; add return types to each method of the stopwatch class; add typecheck to the setTimeout handle property.
 
 
 # Getting Started with Create React App
