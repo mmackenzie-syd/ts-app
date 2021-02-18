@@ -20,6 +20,8 @@ I made the following changes to the code to correct it and ensure that it ran co
 
 2) I would also seperate the logic in the Stopwatch class and the html by moving the html to a functional component (without logic) and have only an interface to the template in the class component.
 
+3) I would add unit tests to the Stopwatch class.
+
 ### Running the Application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). In the project directory, you can run:
