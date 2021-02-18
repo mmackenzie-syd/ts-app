@@ -10,14 +10,13 @@ interface StopwatchProps extends ClassAttributes<Stopwatch> {
 }
 class Stopwatch extends Component<StopwatchProps, any> {
     incrementer: any
-    laps: any[]
     constructor(props: StopwatchProps) {
         super(props);
         this.state = {
             secondsElapsed: props.initialSeconds,
             lastClearedIncrementer: null,
+            laps: []
         }
-        this.laps = [];
         //
         // bind event handlers
         this.handleStartClick = this.handleStartClick.bind(this);
@@ -40,20 +39,28 @@ class Stopwatch extends Component<StopwatchProps, any> {
     }
     handleResetClick() {
         clearInterval(this.incrementer);
-        this.laps = [];
         this.setState({
             secondsElapsed: 0,
+            laps: []
         });
     }
     handleLabClick() {
-        this.laps = this.laps.concat([this.state.secondsElapsed]);
+        const { laps, secondsElapsed } = this.state;
+        const newLaps = laps.concat([secondsElapsed])
+        this.setState({
+            laps: newLaps
+        });
     }
     handleDeleteClick(index: number) {
-        return () => this.laps.splice(index, 1);
+        const newLaps = this.state.laps.concat();
+        newLaps.splice(index, 1);
+        this.setState({
+            laps: newLaps
+        });
     }
     render() {
         const {
-            secondsElapsed,lastClearedIncrementer,
+            secondsElapsed,lastClearedIncrementer, laps
         } = this.state;
         return (
             <div className="stopwatch">
@@ -73,17 +80,17 @@ class Stopwatch extends Component<StopwatchProps, any> {
                         : null
                 )}
                 <ul className="stopwatch-laps">
-                    { this.laps && this.laps.map((lap, i) =>
-                        <Lap key={i} index={i+1} lap={lap} onDelete={this.handleDeleteClick(i)} />) }
+                    { laps && laps.map((lap: number, i: number) =>
+                        <Lap key={i} index={i+1} lap={lap} onDelete={(index: number) => this.handleDeleteClick(index - 1)} />) }
                 </ul>
             </div>
         );
     }
 }
-const Lap = (props: { index: number, lap: number, onDelete: () => {} }) => (
+const Lap = (props: { index: number, lap: number, onDelete: any}) => (
     <li className="stopwatch-lap">
         <strong>{props.index}</strong>/ {formattedSeconds(props.lap)} <button
-        onClick={props.onDelete} > X </button>
+        onClick={() => props.onDelete(props.index)} > X </button>
     </li>
 );
 ReactDOM.render(
