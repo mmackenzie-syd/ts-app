@@ -16,6 +16,13 @@ class Stopwatch extends Component<StopwatchProps, any> {
             lastClearedIncrementer: null,
         }
         this.laps = [];
+        //
+        // bind event handlers
+        this.handleStartClick = this.handleStartClick.bind(this);
+        this.handleStopClick = this.handleStopClick.bind(this);
+        this.handleLabClick = this.handleLabClick.bind(this);
+        this.handleResetClick = this.handleResetClick.bind(this);
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);
     }
     handleStartClick() {
         this.incrementer = setInterval(() =>
@@ -31,10 +38,10 @@ class Stopwatch extends Component<StopwatchProps, any> {
     }
     handleResetClick() {
         clearInterval(this.incrementer);
-        this.laps = [],
-            this.setState({
-                secondsElapsed: 0,
-            });
+        this.laps = [];
+        this.setState({
+            secondsElapsed: 0,
+        });
     }
     handleLabClick() {
         this.laps = this.laps.concat([this.state.secondsElapsed]);
