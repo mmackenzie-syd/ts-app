@@ -8,7 +8,7 @@ I made the following changes to the code to correct it:
 
 3) Remove the forceUpdate and move the laps array property to the state so that deleting a lap will trigger an update when in the stopped state.
 
-4) Add missing styles; add basic styles; add correctly named html elements for the laps list (ul and li).
+4) Add missing styles; add basic styles; add correctly named html elements for the laps list (<ul> and <li>).
 
 5) Remove the setinterval via its handle when the Stopwatch Class Component unmounts to prevent memory leak.
  
