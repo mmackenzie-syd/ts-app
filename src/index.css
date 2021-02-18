@@ -8,6 +8,7 @@
     margin: 30px auto;
     border: 1px solid #111;
     text-align: center;
+    min-height: 300px;
 }
 .stopwatch-timer {
     padding: 20px;
