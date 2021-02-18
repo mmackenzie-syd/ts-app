@@ -91,7 +91,7 @@ class Stopwatch extends Component<StopwatchProps, any> {
         );
     }
 }
-const Lap = (props: { index: number, lap: number, onDelete: any}) => (
+const Lap = (props: { index: number, lap: number, onDelete: (index: number) => void}) => (
     <li className="stopwatch-lap">
         <strong>{props.index}</strong>/ {formattedSeconds(props.lap)} <button
         onClick={() => props.onDelete(props.index)} > X </button>
