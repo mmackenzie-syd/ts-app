@@ -4,19 +4,36 @@
 }
 
 .stopwatch {
-    width: 300px;
+    width: 200px;
     margin: 30px auto;
+    border: 1px solid #111;
+    text-align: center;
 }
 .stopwatch-timer {
-    margin-bottom: 20px;
+    padding: 20px;
+    width: 80px;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #111;
 }
 
 .stopwatch-laps {
-    
+    list-style-type: none;
+    margin-top: 20px;
 }
 
 .stopwatch-lap {
+    margin-bottom: 10px;
+}
 
+.start-btn,
+.stop-btn,
+.reset-btn,
+.lap-btn {
+    padding: 5px;
+    width: 80px;
+    margin-left: 5px;
+    display: inline-block;
 }
 
 .start-btn {
@@ -26,3 +43,13 @@
 .stop-btn {
 
 }
+
+.reset-btn {
+
+}
+
+.lap-btn {
+
+}
+
+

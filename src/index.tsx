@@ -65,11 +65,11 @@ class Stopwatch extends Component<StopwatchProps, any> {
                                   onClick={this.handleStopClick}>stop</button>
                 )}
                 {(secondsElapsed !== 0 && this.incrementer !== lastClearedIncrementer
-                        ? <button type="button" onClick={this.handleLabClick}>lap</button>
+                        ? <button type="button" className="lap-btn" onClick={this.handleLabClick}>lap</button>
                         : null
                 )}
                 {(secondsElapsed !== 0 && this.incrementer === lastClearedIncrementer
-                        ? <button type="button" onClick={this.handleResetClick}>reset</button>
+                        ? <button type="button" className="reset-btn" onClick={this.handleResetClick}>reset</button>
                         : null
                 )}
                 <ul className="stopwatch-laps">
