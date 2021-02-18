@@ -1,3 +1,7 @@
+https://github.com/mmackenzie-syd/ts-app/blob/master/src/index.tsx
+
+https://github.com/mmackenzie-syd/ts-app/blob/master/src/index.css
+
 ### List of Changes
 
 I made the following changes to the code to correct it and ensure that it ran correctly (in the way that I think its meant to run).
