@@ -45,7 +45,6 @@ class Stopwatch extends Component<StopwatchProps, any> {
     }
     handleLabClick() {
         this.laps = this.laps.concat([this.state.secondsElapsed]);
-        this.forceUpdate();
     }
     handleDeleteClick(index: number) {
         return () => this.laps.splice(index, 1);
