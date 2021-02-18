@@ -68,7 +68,7 @@ class Stopwatch extends Component<StopwatchProps, StopwatchState> {
     componentWillUnmount(): void {
         clearInterval(this.incrementer);
     }
-    render() {
+    render(): React.ReactNode  {
         const {
             secondsElapsed, lastClearedIncrementer, laps
         } = this.state;
