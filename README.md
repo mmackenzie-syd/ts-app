@@ -14,7 +14,7 @@
 
 # Suggestions for improvements
 
-I would use React Hooks, with useState and useEffect, as this is the replacement for the Class based code.
+I would use React Hooks, with useState and useEffect, as this is the replacement for the Class based code. I would also seperate the logic in the Stopwatch class and the html by moving the html to a functional component (without logic) and have only an interface to the template in the class component.
 
 
 # Getting Started with Create React App
