@@ -5,6 +5,7 @@ import './index.css';
 
 const formattedSeconds = (sec: number) =>
     Math.floor(sec / 60) + ':' + ('0' + sec % 60).slice(-2);
+
 interface StopwatchProps extends ClassAttributes<Stopwatch> {
     initialSeconds: number;
 }
@@ -57,6 +58,9 @@ class Stopwatch extends Component<StopwatchProps, any> {
         this.setState({
             laps: newLaps
         });
+    }
+    componentWillUnmount() {
+        clearInterval(this.incrementer);
     }
     render() {
         const {
