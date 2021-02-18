@@ -3,13 +3,19 @@ import * as ReactDOM from "react-dom";
 import { Component, ClassAttributes } from "react";
 import './index.css';
 
-const formattedSeconds = (sec: number) =>
+const formattedSeconds = (sec: number): string =>
     Math.floor(sec / 60) + ':' + ('0' + sec % 60).slice(-2);
 
 interface StopwatchProps extends ClassAttributes<Stopwatch> {
     initialSeconds: number;
 }
-class Stopwatch extends Component<StopwatchProps, any> {
+
+interface StopwatchState {
+    secondsElapsed: number,
+    lastClearedIncrementer: any,
+    laps: number []
+}
+class Stopwatch extends Component<StopwatchProps, StopwatchState> {
     incrementer: any
     constructor(props: StopwatchProps) {
         super(props);
@@ -26,45 +32,45 @@ class Stopwatch extends Component<StopwatchProps, any> {
         this.handleResetClick = this.handleResetClick.bind(this);
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
     }
-    handleStartClick() {
+    handleStartClick():void {
         this.incrementer = setInterval(() =>
             this.setState({
                 secondsElapsed: this.state.secondsElapsed + 1,
             }), 1000);
     }
-    handleStopClick() {
+    handleStopClick(): void {
         clearInterval(this.incrementer);
         this.setState({
             lastClearedIncrementer: this.incrementer,
         });
     }
-    handleResetClick() {
+    handleResetClick():void {
         clearInterval(this.incrementer);
         this.setState({
             secondsElapsed: 0,
             laps: []
         });
     }
-    handleLabClick() {
+    handleLabClick(): void {
         const { laps, secondsElapsed } = this.state;
         const newLaps = laps.concat([secondsElapsed])
         this.setState({
             laps: newLaps
         });
     }
-    handleDeleteClick(index: number) {
+    handleDeleteClick(index: number): void {
         const newLaps = this.state.laps.concat();
         newLaps.splice(index, 1);
         this.setState({
             laps: newLaps
         });
     }
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         clearInterval(this.incrementer);
     }
     render() {
         const {
-            secondsElapsed,lastClearedIncrementer, laps
+            secondsElapsed, lastClearedIncrementer, laps
         } = this.state;
         return (
             <div className="stopwatch">
@@ -91,12 +97,20 @@ class Stopwatch extends Component<StopwatchProps, any> {
         );
     }
 }
-const Lap = (props: { index: number, lap: number, onDelete: (index: number) => void}) => (
+
+type LapProps = {
+    index: number,
+    lap: number,
+    onDelete: (index: number) => void
+}
+
+const Lap: React.FC<LapProps> = (props: LapProps) => (
     <li className="stopwatch-lap">
         <strong>{props.index}</strong>/ {formattedSeconds(props.lap)} <button
         onClick={() => props.onDelete(props.index - 1)} > X </button>
     </li>
 );
+
 ReactDOM.render(
     <Stopwatch initialSeconds={0} />,
     document.getElementById("content"),
