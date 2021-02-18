@@ -12,6 +12,10 @@
  
 6) Add type definitions to the following: the stopwatch class state; the lap functional component and input properties; the delete callback function (return a void); add return types to each method of the stopwatch class; add typecheck to the setInterval handle property.
 
+# Suggestions for improvements
+
+I would use React Hooks, with useState and useEffect, as this is the replacement for the Class based code.
+
 
 # Getting Started with Create React App
 
