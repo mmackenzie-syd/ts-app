@@ -1,3 +1,34 @@
+# List of Changes
+
+add prop destructure
+ 
+add type for timeout
+ 
+add typecheck to render
+ 
+add type definitions to class and lap
+ 
+use type definition for delete callback
+
+add min height
+
+remove timer on component unmount
+
+move lap to state so that delete lap works when stopped
+ 
+add basic styles
+ 
+add correct html elements for list
+ 
+add missing styles
+ 
+remove forceUpdate
+
+move key index outside of component
+ 
+bind callback functions
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -44,3 +75,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
