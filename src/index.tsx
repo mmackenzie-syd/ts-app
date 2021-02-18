@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Component, ClassAttributes } from "react";
+import './index.css';
+
 const formattedSeconds = (sec: number) =>
     Math.floor(sec / 60) + ':' + ('0' + sec % 60).slice(-2);
 interface StopwatchProps extends ClassAttributes<Stopwatch> {
