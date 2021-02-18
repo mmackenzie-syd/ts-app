@@ -1,16 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-
-ReactDOM.render(
-  <React.StrictMode>
-    Hello
-  </React.StrictMode>,
-  document.getElementById('content')
-);
-
-
-/*
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Component, ClassAttributes } from "react";
@@ -95,4 +82,4 @@ ReactDOM.render(
     <Stopwatch initialSeconds={0} />,
     document.getElementById("content"),
 );
-*/
+
