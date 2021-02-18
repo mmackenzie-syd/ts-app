@@ -12,7 +12,7 @@ interface StopwatchProps extends ClassAttributes<Stopwatch> {
 
 interface StopwatchState {
     secondsElapsed: number,
-    lastClearedIncrementer: any,
+    lastClearedIncrementer: number | undefined,
     laps: number []
 }
 class Stopwatch extends Component<StopwatchProps, StopwatchState> {
@@ -21,7 +21,7 @@ class Stopwatch extends Component<StopwatchProps, StopwatchState> {
         super(props);
         this.state = {
             secondsElapsed: props.initialSeconds,
-            lastClearedIncrementer: null,
+            lastClearedIncrementer: undefined,
             laps: []
         }
         //
@@ -45,7 +45,7 @@ class Stopwatch extends Component<StopwatchProps, StopwatchState> {
         });
     }
     handleResetClick(): void {
-        clearInterval(this.incrementer );
+        clearInterval(this.incrementer);
         this.setState({
             secondsElapsed: 0,
             laps: []
