@@ -85,7 +85,7 @@ class Stopwatch extends Component<StopwatchProps, any> {
                 )}
                 <ul className="stopwatch-laps">
                     { laps && laps.map((lap: number, i: number) =>
-                        <Lap key={i} index={i+1} lap={lap} onDelete={(index: number) => this.handleDeleteClick(index - 1)} />) }
+                        <Lap key={i} index={i+1} lap={lap} onDelete={this.handleDeleteClick} />) }
                 </ul>
             </div>
         );
@@ -94,7 +94,7 @@ class Stopwatch extends Component<StopwatchProps, any> {
 const Lap = (props: { index: number, lap: number, onDelete: (index: number) => void}) => (
     <li className="stopwatch-lap">
         <strong>{props.index}</strong>/ {formattedSeconds(props.lap)} <button
-        onClick={() => props.onDelete(props.index)} > X </button>
+        onClick={() => props.onDelete(props.index - 1)} > X </button>
     </li>
 );
 ReactDOM.render(
